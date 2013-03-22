@@ -3,12 +3,9 @@ package net.kernevez.leak;
 
 public class LeakCreator {
 	public static byte[] leak = new byte[Leak.BUFFER_SIZE];
-	public static ThreadLocal<Class<LeakCreator>> local = new ThreadLocal<Class<LeakCreator>>();
+
+    public static ThreadLocal<Object> local = new ThreadLocal<Object>();
 	static {
-		//System.out.println("Load class...");
-		local.set(LeakCreator.class);
-	}
-	
-	public LeakCreator () {
+        local.set(LeakCreator.class);
 	}
 }
