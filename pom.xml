@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+	  http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.octo.techclub.memoryleak</groupId>
+	<artifactId>memoryleak</artifactId>
+	<version>1-SNAPSHOT</version>
+	<name>Memory leak exemples</name>
+	
+	<organization>
+		<name>OCTO Technology</name>
+		<url>http://www.octo.com</url>
+	</organization>
+
+	<inceptionYear>2013</inceptionYear>
+	<properties>
+		<my.source.encoding>UTF-8</my.source.encoding>
+		<my.java.version>7</my.java.version>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${my.java.version}</source>
+					<target>${my.java.version}</target>
+					<encoding>${my.source.encoding}</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<configuration>
+					<encoding>${my.source.encoding}</encoding>
+				</configuration>
+			</plugin>
+			<!--plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-enforcer-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>enforce-versions</id>
+						<goals>
+							<goal>enforce</goal>
+						</goals>
+						<configuration>
+							<rules>
+								<requireMavenVersion>
+									<version>3.0.2</version>
+								</requireMavenVersion>
+								<requireJavaVersion>
+									<version>${my.java.version}</version>
+								</requireJavaVersion>
+							</rules>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin-->
+		</plugins>
+
+	</build>
+
+</project>

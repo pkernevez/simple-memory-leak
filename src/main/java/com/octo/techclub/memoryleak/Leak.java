@@ -1,4 +1,4 @@
-package net.kernevez.leak;
+package com.octo.techclub.memoryleak;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -19,7 +19,7 @@ public class Leak {
 
         public LeakLoader() throws IOException {
             ByteArrayOutputStream tStream = new ByteArrayOutputStream();
-            InputStream tInput = getResourceAsStream("net/kernevez/leak/LeakCreator.class");
+            InputStream tInput = getResourceAsStream("com/octo/techclub/memoryleak/LeakCreator.class");
             byte[] buffer = new byte[1000];
             for (int readBytes = tInput.read(buffer); readBytes > 0; readBytes = tInput.read(buffer)) {
                 tStream.write(buffer, 0, readBytes);
@@ -28,7 +28,7 @@ public class Leak {
         }
 
         public Class<?> myLoadClass() throws ClassNotFoundException {
-            Class<?> tClass = defineClass("net.kernevez.leak.LeakCreator", leakCode, 0, leakCode.length);
+            Class<?> tClass = defineClass("com.octo.techclub.memoryleak.LeakCreator", leakCode, 0, leakCode.length);
             resolveClass(tClass);
             return tClass;
         }

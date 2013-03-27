@@ -1,4 +1,4 @@
-package net.kernevez.leak;
+package com.octo.techclub.memoryleak;
 
 
 public class LeakCreator {
