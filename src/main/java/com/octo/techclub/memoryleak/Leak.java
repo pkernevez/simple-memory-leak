@@ -62,7 +62,7 @@ public class Leak {
                             }
 
                             System.out.println(sb);
-
+                            out.write(sb.toString());
                             try {
                                 Class<?> c = new LeakLoader().myLoadClass();
                                 Object o = c.newInstance();
