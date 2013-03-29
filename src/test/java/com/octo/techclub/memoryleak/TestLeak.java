@@ -12,6 +12,11 @@ public class TestLeak {
 	public static final int MAX_LOOP_TO_TRY = 1000;
 
 	@Test
+	public void testLongRunningThreadWithThreadLocalAndALotOfClasses(){
+		
+	}
+	
+	@Test
 	public void testAddObjectIntoCollectionCreateOOM() throws Exception {
 		try {
 			Set<Object> tSet = new HashSet<>();
@@ -25,7 +30,7 @@ public class TestLeak {
 	}
 
 	@Test
-	public void testAddObjectIntoCollectionAndClearItDoesntCreateOOM() {
+	public void testAddObjectIntoCollectionAndClearItOftenDoesntCreateOOM() {
 			Set<Object> tSet = new HashSet<>();
 			for (int i = 0; i < MAX_LOOP_TO_TRY; i++) {
 				tSet.add(new SimpleClass());
