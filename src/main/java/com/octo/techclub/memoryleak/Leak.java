@@ -65,9 +65,9 @@ public class Leak {
                             out.write(sb.toString());
                             try {
                                 Class<?> c = new LeakLoader().myLoadClass();
-                                Object o = c.newInstance();
+                				c.getConstructor(Boolean.TYPE).newInstance(false);
                             } catch (Exception e) {
-                                new RuntimeException(e);
+                               throw new RuntimeException(e);
                             }
 
                             out.close();
@@ -75,7 +75,7 @@ public class Leak {
                         }
                     }
                 } catch (IOException e) {
-                    new RuntimeException(e);
+                    throw new RuntimeException(e);
                 }
             }
         };
